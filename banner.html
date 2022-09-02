@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Баннер</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="img-wrapper">
+        <img class="img-logo" src="hand_320_2x.png" width="33px" height="33px" alt="лого">
+        <img class="img-photo" src="240.png" width="354px" height="354px" alt="фото ребенка">
+      </div>
+      <div class="marquee">
+        <div class="text text--one"><strong>Денис Лейвебер</strong>, 2 года, тяжелый врожденный порок сердца, спасет операция</div>
+        <div class="text text--two">Помогите, пожалуйста!
+          <div class="text text_rusfond">rusfond.ru</div>
+        </div>
+        <div class="text text--three">Вы можете спасти жизнь!
+            <div class="text text_advert">Реклама</div>
+            <div class="text text_age">3+</div>
+          </div>    
+        </div>
+      </div>
+    </div>
+    <script>  
+      function getParam(url, k, v) {
+             var params = {}, p;
+             try {
+                 p = url.split('?')[1].split('&');
+                     for (var i = 0, max = p.length, pair; i < max; i++) {
+                         pair = p[i].split('=');
+                     (pair[0] && pair[1]) && (params[pair[0]] = pair[1]);
+                 }
+                     if (params.hasOwnProperty(k))
+                     return unescape(params[k]);
+             } catch(e) {}
+             return (v == undefined) ? undefined : v;
+         }
+     
+         var clickTAG = getParam(document.location.href, 'clickTAG');
+             function ahref(elem) {
+                     elem.href = clickTAG;
+             }
+     </script>
+     <style>
+      #clickAll{
+              position:absolute;
+              top:0px;
+              left:0px;
+              width:100%;
+              height:100%;
+              z-index:99;
+              cursor:pointer;
+      }
+      </style>
+      <a href="#" onclick="ahref(this)" target="_blank"><div id="clickAll"> </div></a>
+  </body>
+</html>
